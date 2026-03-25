@@ -1,0 +1,110 @@
+:root {
+    --bg-color: #050a14;
+    --card-bg: #0f172a;
+    --text-color: #e2e8f0;
+    --neon-green: #00f5d4;
+    --neon-blue: #00b4d8;
+    --neon-purple: #9b5de5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.tagline {
+    font-family: 'Fira Code', monospace;
+    color: var(--neon-green);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-right: 2px solid var(--neon-green); /* Cursor del efecto typing */
+}
+
+.grid-strategy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    opacity: 0; /* JS lo activará */
+    transform: translateY(30px); /* JS lo activará */
+}
+
+.card:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+ul li::before {
+    content: "▹";
+    color: var(--neon-blue);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+}
